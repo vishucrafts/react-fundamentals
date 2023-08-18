@@ -1,22 +1,21 @@
 import React from 'react';
 
-// Update queue: [setCounter(0 + 1), setCounter(0 + 1)]
+// First example Update queue: [setTime(1), setTime(1)]
+// Current example Update queue: [setTime(1), setTime(prevTime => prevTime + 1)]
 function App() { 
-	const [counter, setCounter] = React.useState(0) // It's like a photo of that particular call
-	// first time React.useState is called it returns [0, function]
-	// second time React.useState is called it returns [1, function]
+	const [time, setTime] = React.useState(0) 
 
-	// On click a state update is added to the update queue
-	// On exiting the event handler, the update queue is flushed
+	console.log("Renders")
+
 	function increment() {
-		setCounter(counter + 1);
-		setCounter(counter + 1);
+		setTime(time + 1);
+		setTime(prevTime => prevTime + 1);
 	}
 
   return (
     <div>
-      <h1>{counter}</h1>
-			<button onClick={increment}>Increment</button>
+      <h1>{time} seconds</h1>
+			<button onClick={increment}>Start Timer</button>
     </div>
   )
 }
