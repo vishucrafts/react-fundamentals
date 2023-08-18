@@ -9,7 +9,7 @@ function Timer() {
 	function increment() {
 		// State is like a photo in that particular call
 		setInterval(() => {
-			// setTime(time + 1)
+			console.log("Is updating")
 			setTime((prevTime) => prevTime + 1);
 		}, 1000);
 	}
