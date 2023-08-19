@@ -1,19 +1,9 @@
-import React from 'react';
-import Timer from './components/Timer';
+import Todos from "./components/Todos"
 
-// Update queue: []
 function App() { 
-	console.log("Renders App")
-	const [showTimer, setShowTimer] = React.useState(false)
-
-	function toggleTimer() {
-		setShowTimer(!showTimer)
-	}
-
   return (
     <div>
-			<button onClick={toggleTimer}>{showTimer ? 'Hide Timer' : 'Show Timer'}</button>
-			{showTimer && <Timer />}
+			<Todos />
 		</div>
   )
 }

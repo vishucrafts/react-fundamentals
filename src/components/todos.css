@@ -1,0 +1,28 @@
+.todos {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	list-style: none;
+}
+
+.todo {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border: 1px solid #ccc;
+	margin: 5px;
+	border-radius: 3px;
+}
+
+.todo.completed {
+	color: green;
+}
+
+.completed {
+	color: #ccc;
+}
+
+.pending {
+	text-decoration: none;
+	color: #000;
+}
