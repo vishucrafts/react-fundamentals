@@ -1,5 +1,6 @@
 import React from "react";
 import "./todos.css";
+import clsx from 'clsx'
 
 function Todos() {
 	const [todos, setTodos] = React.useState([]);
@@ -15,10 +16,13 @@ function Todos() {
 			<h1>Todos</h1>
 			<ul className="todos">
 				{todos.map((todo) => (
-					<li
-						key={todo.id}
-						className={`todo ${todo.completed ? 'completed': 'pending'}`}
-					>
+					<li key={todo.id} className={
+						clsx(
+							'todo',
+							{completed: todo.completed},
+							{pending: !todo.completed},
+						)
+					}>
 						{todo.title}
 						{todo.completed ? (
 							<span className="completed">Completed</span>
