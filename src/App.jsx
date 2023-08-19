@@ -1,8 +1,9 @@
 import React from 'react';
 import Timer from './components/Timer';
 
+// Update queue: []
 function App() { 
-	const [showTimer, setShowTimer] = React.useState(true)
+	const [showTimer, setShowTimer] = React.useState(false)
 
 	function toggleTimer() {
 		setShowTimer(!showTimer)
