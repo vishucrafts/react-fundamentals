@@ -19,16 +19,16 @@ function Timer() {
 				clearInterval(timer);
 			};
 		}
-	});
+	}, [timerStarted]);
 
-	function startTimer() {
-		setTimerStarted(true);
+	function toggleTimer() {
+		setTimerStarted(!timerStarted);
 	}
 
 	return (
 		<div>
 			<h1>{time} seconds</h1>
-			<button onClick={startTimer}>Start Timer</button>
+			<button onClick={toggleTimer}>{timerStarted ? 'Stop Timer' : 'Start Timer'}</button>
 		</div>
 	);
 }
